@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passport Renewal Application System</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">
+            <img src="./assets/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+            Passport Application System
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="./User-home-page.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./New-applcaiton-webpage.html">New Passport</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./passport-renewal.html">Renew Passport</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./Application-status.html">Check Status</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./complaint-and-feedback-page.html">Feedback</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./Log-in-page.html">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1>Passport Renewal Application</h1>
+                <p id="info">Welcome! This system allows you to renew your passport online.</p>
+            </div>
+        </div>
+
+        <!-- Form Container -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <form id="passport-renewal-form">
+                    <!-- Applicant Information Fieldset -->
+                    <fieldset class="border p-4 mb-4">
+                        <legend class="w-auto"><h2>Applicant Information</h2></legend>
+                        <div class="form-group">
+                            <label for="first-name">First Name:</label>
+                            <input type="text" class="form-control" id="first-name" name="first_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="last-name">Last Name:</label>
+                            <input type="text" class="form-control" id="last-name" name="last_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="date-of-birth">Date of Birth:</label>
+                            <input type="date" class="form-control" id="date-of-birth" name="date_of_birth" required>
+                        </div>
+                    </fieldset>
+
+                    <!-- Passport Details Fieldset -->
+                    <fieldset class="border p-4 mb-4">
+                        <legend class="w-auto"><h2>Passport Details</h2></legend>
+                        <div class="form-group">
+                            <label for="passport-number">Current Passport Number:</label>
+                            <input type="text" class="form-control" id="passport-number" name="passport_number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="issue-date">Date of Issue:</label>
+                            <input type="date" class="form-control" id="issue-date" name="issue_date" required>
+                        </div>
+                    </fieldset>
+
+                    <!-- Appointment Details Fieldset -->
+                    <fieldset class="border p-4 mb-4">
+                        <legend class="w-auto"><h2>Appointment Details</h2></legend>
+                        <div class="form-group">
+                            <label for="appdocver">Appointment for Document Verification:</label>
+                            <input type="date" class="form-control" id="appdocver" name="appdocver" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="apppolice">Appointment for Police Verification:</label>
+                            <input type="date" class="form-control" id="apppolice" name="apppolice" required>
+                        </div>
+                    </fieldset>
+
+                    <!-- Upload Documents Fieldset -->
+                    <fieldset class="border p-4 mb-4">
+                        <legend class="w-auto"><h2>Upload Documents</h2></legend>
+                        <p>Please upload the following documents:</p>
+                        <ul>
+                            <li>Recent Passport Photo (refer to official guidelines for size and format)</li>
+                            <li>Copy of Current Passport Biodata Page</li>
+                        </ul>
+                        <div class="form-group">
+                            <input type="file" class="form-control-file" id="document-upload" name="documents[]" multiple>
+                        </div>
+                      
+                    </fieldset>
+
+                    <!-- Contact Information Fieldset -->
+                    <fieldset class="border p-4 mb-4">
+                        <legend class="w-auto"><h2>Contact Information</h2></legend>
+                        <div class="form-group">
+                            <label for="email">Email Address:</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone-number">Phone Number:</label>
+                            <input type="tel" class="form-control" id="phone-number" name="phone_number" required>
+                        </div>
+                    </fieldset>
+
+                    <button type="submit" class="btn btn-primary btn-block">Submit Application</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white text-center py-3 mt-5">
+        <p>Passport Application System &copy; 2024. All Rights Reserved.</p>
+        <p><a href="contact.html" class="text-white">Contact Us</a> | <a href="about.html" class="text-white">About Us</a></p>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

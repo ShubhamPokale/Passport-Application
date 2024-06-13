@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passport Application - Home</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">
+            <img src="./assets/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+            Passport Application System
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="./New-applcaiton-webpage.html">New Passport</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./passport-renewal.html">Renew Passport</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./Application-status.html">Check Status</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./complaint-and-feedback-page.html">Feedback</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./Log-in-page.html">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Dashboard Container -->
+    <div class="container mt-5">
+        <div class="row">
+            <!-- Welcome Message -->
+            <div class="col-12 text-center">
+                <h1>Welcome, [User's Name]</h1>
+                <p class="lead">Manage your passport applications and updates from here.</p>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <!-- Card for New Passport Application -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">New Passport</h5>
+                        <p class="card-text">Apply for a new passport easily.</p>
+                        <a href="./New-applcaiton-webpage.html" class="btn btn-primary">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Card for Passport Renewal -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Renew Passport</h5>
+                        <p class="card-text">Renew your existing passport.</p>
+                        <a href="./passport-renewal.html" class="btn btn-primary">Renew Now</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Card for Checking Status -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Application Status</h5>
+                        <p class="card-text">Check the status of your applications.</p>
+                        <a href="./Application-status.html" class="btn btn-primary">Check Status</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white text-center py-3 mt-5">
+        <p>Passport Application System &copy; 2024. All Rights Reserved.</p>
+        <p><a href="https://www.passportindia.gov.in/AppOnlineProject/online/callCenter" class="text-white">Contact Us</a> | <a href="https://www.passportindia.gov.in/AppOnlineProject/welcomeLink" class="text-white">About Us</a></p>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

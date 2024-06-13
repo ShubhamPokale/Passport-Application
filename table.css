@@ -1,0 +1,35 @@
+/* Apply basic styling to the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+  }
+  
+  /* Style the table header */
+  th {
+    background-color: #f2f2f2;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  /* Style the table rows */
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  /* Hover effect on table rows */
+  tr:hover {
+    background-color: #ddd;
+  }
+  
+  /* Style table cells */
+  td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Remove bottom border from the last table row */
+  tr:last-child td {
+    border-bottom: none;
+  }
+  

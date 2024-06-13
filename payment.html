@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passport Application Payment</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./styles/style.css">
+    <style>
+        .payment-details {
+            border: 1px solid #ddd;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        .payment-details h2 {
+            margin-bottom: 0.5rem;
+        }
+        .payment-method {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        .payment-method input[type="radio"] {
+            margin-right: 0.5rem;
+        }
+        .payment-method img {
+            width: 50px;
+            height: auto;
+        }
+        .payment-form {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">
+            <img src="./assets/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+            Passport Application System
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="./User-home-page.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./New-applcaiton-webpage.html">New Passport</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./passport-renewal.html">Renew Passport</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./Application-status.html">Check Status</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./complaint-and-feedback-page.html">Feedback</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./Log-in-page.html">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1>Passport Application Payment</h1>
+            </div>
+        </div>
+
+        <!-- Payment Details Container -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="payment-details">
+                    <h2>Application Details</h2>
+                    <p>Applicant Name: [Applicant Name]</p>
+                    <p>Passport Type: [Passport Type]</p>
+                    <p>Application Fee: [Application Fee]</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Payment Method Selection -->
+        <div class="row">
+            <div class="col-12">
+                <h2>Select Payment Method:</h2>
+                <div class="form-check payment-method">
+                    <input class="form-check-input" type="radio" id="credit-card" name="payment-method" value="credit-card" checked>
+                    <label class="form-check-label" for="credit-card">Credit Card</label>
+                </div>
+                <div class="form-check payment-method">
+                    <input class="form-check-input" type="radio" id="debit-card" name="payment-method" value="debit-card">
+                    <label class="form-check-label" for="debit-card">Debit Card</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Credit Card Payment Form -->
+        <div class="row mt-4 payment-form" id="credit-card-form">
+            <div class="col-12">
+                <h2>Credit Card Payment</h2>
+                <div class="form-group">
+                    <label for="card-number">Card Number:</label>
+                    <input type="text" class="form-control" id="card-number" required>
+                </div>
+                <div class="form-group">
+                    <label for="expiry-date">Expiry Date:</label>
+                    <input type="text" class="form-control" id="expiry-date" placeholder="MM/YY" required>
+                </div>
+                <div class="form-group">
+                    <label for="cvv">CVV:</label>
+                    <input type="text" class="form-control" id="cvv" maxlength="3" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Pay Now</button>
+            </div>
+        </div>
+
+        <!-- Debit Card Payment Form -->
+        <div class="row mt-4 payment-form" id="debit-card-form">
+            <div class="col-12">
+                <h2>Debit Card Payment</h2>
+                <button type="submit" class="btn btn-primary btn-block">Pay Now</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white text-center py-3 mt-5">
+        <p>Passport Application System &copy; 2024. All Rights Reserved.</p>
+        <p><a href="https://www.passportindia.gov.in/AppOnlineProject/online/callCenter" class="text-white">Contact Us</a> | <a href="https://www.passportindia.gov.in/AppOnlineProject/online/profiles" class="text-white">About Us</a></p>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        const creditCardRadio = document.getElementById('credit-card');
+        const debitCardRadio = document.getElementById('debit-card');
+        const creditCardForm = document.getElementById('credit-card-form');
+        const debitCardForm = document.getElementById('debit-card-form');
+
+        document.addEventListener('DOMContentLoaded', function() {
+            if (creditCardRadio.checked) {
+                creditCardForm.style.display = 'block';
+            }
+            creditCardRadio.addEventListener('change', () => {
+                creditCardForm.style.display = 'block';
+                debitCardForm.style.display = 'none';
+            });
+
+            debitCardRadio.addEventListener('change', () => {
+                creditCardForm.style.display = 'none';
+                debitCardForm.style.display = 'block';
+            });
+        });
+    </script>
+</body>
+</html>

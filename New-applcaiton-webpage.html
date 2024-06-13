@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Passport Application Form</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">
+            <img src="./assets/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+            Passport Application System
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="./User-home-page.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./New-applcaiton-webpage.html">New Passport</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./passport-renewal.html">Renew Passport</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./Application-status.html">Check Status</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./complaint-and-feedback-page.html">Feedback</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./Log-in-page.html">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1>PASSPORT APPLICATION FORM</h1>
+                <h4>Fresh Application</h4>
+                <h5>Renewal / Re-issue of Passport - <a href="./passport-renewal.html">fill this form instead</a></h5>
+            </div>
+        </div>
+
+        <!-- Form Container -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <form action="/submit_passport_application" method="post">
+                    <!-- Service Required -->
+                    <fieldset class="border p-4 mb-4">
+                        <legend class="w-auto">1. Service Required</legend>
+                        <div class="form-group">
+                            <label>Type of Application:</label><br>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="application_type" value="normal" required>
+                                <label class="form-check-label">Normal</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="application_type" value="tatkaal" required>
+                                <label class="form-check-label">Tatkaal</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Type of Passport Booklet:</label>
+                            <select class="form-control" name="passport_booklet_type" required>
+                                <option value="36_pages">36 Pages</option>
+                                <option value="60_pages">60 Pages</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Validity Required:</label>
+                            <select class="form-control" name="validity_required" required>
+                                <option value="10_years">10 Years</option>
+                                <option value="up_to_age_18">Up to age 18 (For minors between 15 and 18 years)</option>
+                            </select>
+                        </div>
+                    </fieldset>
+
+                    <!-- Applicant Details -->
+                    <fieldset class="border p-4 mb-4">
+                        <legend class="w-auto">2. Applicant Details</legend>
+                        <div class="form-group">
+                            <label>Given Name:</label>
+                            <input type="text" class="form-control" name="given_name" required minlength="1" maxlength="45">
+                            <small class="form-text text-muted">Given Name means First name followed by Middle name (If any)(Initials not allowed)</small>
+                        </div>
+                        <div class="form-group">
+                            <label>Surname:</label>
+                            <input type="text" class="form-control" name="surname" required minlength="1" maxlength="45">
+                        </div>
+                        <div class="form-group">
+                            <label>Are you known by any other names (aliases)?</label><br>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="known_by_other_names" value="yes">
+                                <label class="form-check-label">Yes</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="known_by_other_names" value="no">
+                                <label class="form-check-label">No</label>
+                            </div>
+                            <small class="form-text text-muted">If yes, please provide the aliases:</small>
+                            <input type="text" class="form-control" name="alias" minlength="1" maxlength="45">
+                        </div>
+                        <div class="form-group">
+                            <label>Have you ever changed your name?</label><br>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="changed_name" value="yes">
+                                <label class="form-check-label">Yes</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="changed_name" value="no">
+                                <label class="form-check-label">No</label>
+                            </div>
+                            <small class="form-text text-muted">If yes, please provide the previous name:</small>
+                            <input type="text" class="form-control" name="previous_name" minlength="1" maxlength="45">
+                        </div>
+                        <div class="form-group">
+                            <label>Date of Birth:</label>
+                            <input type="date" class="form-control" name="dob" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Place of Birth (Village or Town or City):</label>
+                            <input type="text" class="form-control" name="place_of_birth" required minlength="1" maxlength="25">
+                        </div>
+                        <div class="form-group">
+                            <label>District (If born in India):</label>
+                            <input type="text" class="form-control" name="district" required minlength="1" maxlength="25">
+                        </div>
+                        <div class="form-group">
+                            <label>State/UT (If born in India):</label>
+                            <input type="text" class="form-control" name="state" required minlength="1" maxlength="25">
+                        </div>
+                        <div class="form-group">
+                            <label>Region/Country (If born abroad):</label>
+                            <input type="text" class="form-control" name="region_country" required minlength="1" maxlength="25">
+                        </div>
+                        <div class="form-group">
+                            <label>Gender:</label><br>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" value="male" required>
+                                <label class="form-check-label">Male</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" value="female" required>
+                                <label class="form-check-label">Female</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" value="transgender" required>
+                                <label class="form-check-label">Transgender</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Marital Status:</label>
+                            <select class="form-control" name="marital_status" required>
+                                <option value="single">Single</option>
+                                <option value="married">Married</option>
+                                <option value="divorced">Divorced</option>
+                                <option value="widow_widower">Widow/Widower</option>
+                                <option value="separated">Separated</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Citizenship of India by:</label>
+                            <select class="form-control" name="citizenship" required>
+                                <option value="birth">Birth</option>
+                                <option value="descent">Descent</option>
+                                <option value="registration_naturalization">Registration/Naturalization</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>PAN (If available):</label>
+                            <input type="text" class="form-control" name="pan" minlength="10" maxlength="10">
+                        </div>
+                        <div class="form-group">
+                            <label>Voter ID (If available):</label>
+                            <input type="text" class="form-control" name="voter_id">
+                        </div>
+                        <div class="form-group">
+                            <label>Employment Type:</label>
+                            <select class="form-control" name="employment_type" required>
+                                <option value="psu">PSU</option>
+                                <option value="government">Government</option>
+                                <option value="statutory_body">Statutory Body</option>
+                                <option value="retired_government_servant">Retired Government Servant</option>
+                                <option value="self_employed">Self Employed</option>
+                                <option value="private">Private</option>
+                                <option value="homemaker">Homemaker</option>
+                                <option value="not_employed">Not Employed</option>
+                                <option value="retired_private_service">Retired-Private Service</option>
+                                <option value="student">Student</option>
+                                <option value="others">Others</option>
+                                <option value="x">Owners, Partners & Directors of companies which are members of CII, FICCI & ASSOCHAM</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>If employed in Government/ Statutory Body/ PSU, specify organization name:</label>
+                            <input type="text" class="form-control" name="organization_name" minlength="1" maxlength="30">
+                        </div>
+                        <div class="form-group">
+                            <label>Is either of your parent (in case of minor)/ spouse, a government servant?</label><br>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="parent_spouse_government_servant" value="yes">
+                                <label class="form-check-label">Yes</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="parent_spouse_government_servant" value="no">
+                                <label class="form-check-label">No</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Educational Qualification:</label>
+                            <select class="form-control" name="education" required>
+                                <option value="7th_pass_or_less">7th pass or less</option>
+                                <option value="between_8th_and_9th_standard">Between 8th and 9th Standard</option>
+                                <option value="10th_pass_and_above">10th pass and above</option>
+                                <option value="graduate_and_above">Graduate and above</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Are you eligible for Non-ECR category?</label><br>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="non_ecr" value="yes">
+                                <label class="form-check-label">Yes</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="non_ecr" value="no">
+                                <label class="form-check-label">No</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Visible Distinguishing Mark:</label>
+                            <input type="text" class="form-control" name="distinguishing_mark" minlength="1" maxlength="30">
+                        </div>
+                        <div class="form-group">
+                            <label>Aadhaar Number:</label>
+                            <input type="text" class="form-control" name="aadhaar" minlength="12" maxlength="12">
+                        </div>
+                    </fieldset>
+
+                    <!-- Family Details -->
+                    <fieldset class="border p-4 mb-4">
+                        <legend class="w-auto">3. Family Details</legend>
+                        <div class="form-group">
+                            <label>Father's Given Name:</label>
+                            <input type="text" class="form-control" name="father_given_name" required minlength="1" maxlength="45">
+                            <small class="form-text text-muted">Given Name means First name followed by Middle name (If any)(Initials not allowed)</small>
+                        </div>
+                        <div class="form-group">
+                            <label>Father's Surname:</label>
+                            <input type="text" class="form-control" name="father_surname" required minlength="1" maxlength="45">
+                        </div>
+                        <div class="form-group">
+                            <label>Mother's Given Name:</label>
+                            <input type="text" class="form-control" name="mother_given_name" required minlength="1" maxlength="45">
+                            <small class="form-text text-muted">Given Name means First name followed by Middle name (If any)(Initials not allowed)</small>
+                        </div>
+                        <div class="form-group">
+                            <label>Mother's Surname:</label>
+                            <input type="text" class="form-control" name="mother_surname" required minlength="1" maxlength="45">
+                        </div>
+                        <div class="form-group">
+                            <label>Legal Guardian's Given Name:</label>
+                            <input type="text" class="form-control" name="legal_guardian_given_name" minlength="1" maxlength="45">
+                            <small class="form-text text-muted">(If applicable) (Initials not allowed)</small>
+                        </div>
+                        <div class="form-group">
+                            <label>Legal Guardian's Surname:</label>
+                            <input type="text" class="form-control" name="legal_guardian_surname" minlength="1" maxlength="45">
+                        </div>
+                        <div class="form-group">
+                            <label>Spouse's Given Name:</label>
+                            <input type="text" class="form-control" name="spouse_given_name" required minlength="1" maxlength="45">
+                            <small class="form-text text-muted">(Given Name means First name followed by Middle name (If any)) (Initials not allowed)</small>
+                        </div>
+                        <div class="form-group">
+                            <label>Spouse's Surname:</label>
+                            <input type="text" class="form-control" name="spouse_surname" required minlength="1" maxlength="45">
+                        </div>
+                        <div class="form-group">
+                            <label>Parent's Passport Details (If applicant is minor):</label>
+                            <label>Father's/Legal Guardian's File/Passport Number:</label>
+                            <input type="text" class="form-control" name="father_passport_number" maxlength="15">
+                        </div>
+                        <div class="form-group">
+                            <label>Father's/Legal Guardian's Nationality, if not Indian:</label>
+                            <input type="text" class="form-control" name="father_nationality" maxlength="15">
+                        </div>
+                        <div class="form-group">
+                            <label>Mother's/Legal Guardian's File/Passport Number:</label>
+                            <input type="text" class="form-control" name="mother_passport_number" maxlength="15">
+                        </div>
+                        <div class="form-group">
+                            <label>Mother's/Legal Guardian's Nationality, if not Indian:</label>
+                            <input type="text" class="form-control" name="mother_nationality" maxlength="15">
+                        </div>
+                    </fieldset>
+
+                    <!-- Present Residential Address Details -->
+                    <fieldset class="border p-4 mb-4">
+                        <legend class="w-auto">4. Present Residential Address Details</legend>
+                        <div class="form-group">
+                            <label>House No. and Street Name:</label>
+                            <input type="text" class="form-control" name="present_house_street" required minlength="1" maxlength="40">
+                        </div>
+                        <div class="form-group">
+                            <label>Village or Town or City:</label>
+                            <input type="text" class="form-control" name="present_town" required minlength="1" maxlength="30">
+                        </div>
+                        <div class="form-group">
+                            <label>District:</label>
+                            <input type="text" class="form-control" name="present_district" required minlength="1" maxlength="30">
+                        </div>
+                        <div class="form-group">
+                            <label>Police Station:</label>
+                            <input type="text" class="form-control" name="present_police_station" required minlength="1" maxlength="30">
+                        </div>
+                        <div class="form-group">
+                            <label>State/UT:</label>
+                            <input type="text" class="form-control" name="present_state" required minlength="1" maxlength="30">
+                        </div>
+                        <div class="form-group">
+                            <label>PIN:</label>
+                            <input type="text" class="form-control" name="pin" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Mobile Number:</label>
+                            <input type="text" class="form-control" name="mobile_number" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Telephone Number:</label>
+                            <input type="text" class="form-control" name="telephone_number">
+                        </div>
+                        <div class="form-group">
+                            <label>E-mail ID:</label>
+                            <input type="email" class="form-control" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Is permanent address same as present address?</label><br>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="same_address" value="yes">
+                                <label class="form-check-label">Yes</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="same_address" value="no">
+                                <label class="form-check-label">No</label>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <!-- Emergency Contact Details -->
+                    <fieldset class="border p-4 mb-4">
+                        <legend class="w-auto">5. Emergency Contact Details</legend>
+                        <div class="form-group">
+                            <label>Name and Address:</label>
+                            <input type="text" class="form-control" name="emergency_contact_name" required size="70">
+                        </div>
+                        <div class="form-group">
+                            <label>Mobile Number:</label>
+                            <input type="text" class="form-control" name="emergency_contact_mobile" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Telephone Number:</label>
+                            <input type="text" class="form-control" name="emergency_contact_telephone">
+                        </div>
+                        <div class="form-group">
+                            <label>E-mail ID:</label>
+                            <input type="email" class="form-control" name="emergency_contact_email" required>
+                        </div>
+                    </fieldset>
+
+                    <!-- Other Details -->
+                    <fieldset class="border p-4 mb-4">
+                        <legend class="w-auto">6. Other Details</legend>
+                        <div class="form-group">
+                            <label>Are any criminal proceedings pending against the applicant?</label><br>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="criminal_proceedings" value="yes">
+                                <label class="form-check-label">Yes</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="criminal_proceedings" value="no">
+                                <label class="form-check-label">No</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Have you been convicted by a court in India?</label><br>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="criminal_convictions" value="yes">
+                                <label class="form-check-label">Yes</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="criminal_convictions" value="no">
+                                <label class="form-check-label">No</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Have you ever been refused/denied a passport?</label><br>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="refused_passport" value="yes">
+                                <label class="form-check-label">Yes</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="refused_passport" value="no">
+                                <label class="form-check-label">No</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Has your passport ever been impounded?</label><br>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="impounded_passport" value="yes">
+                                <label class="form-check-label">Yes</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="impounded_passport" value="no">
+                                <label class="form-check-label">No</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Has your passport ever been revoked?</label><br>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="revoked_passport" value="yes">
+                                <label class="form-check-label">Yes</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="revoked_passport" value="no">
+                                <label class="form-check-label">No</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Have you ever been granted citizenship by another country?</label><br>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="granted_citizenship" value="yes">
+                                <label class="form-check-label">Yes</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="granted_citizenship" value="no">
+                                <label class="form-check-label">No</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Have you ever held the passport of another country?</label><br>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="held_foreign_passport" value="yes">
+                                <label class="form-check-label">Yes</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="held_foreign_passport" value="no">
+                                <label class="form-check-label">No</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Have you ever surrendered your Indian passport?</label><br>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="surrendered_indian_passport" value="yes">
+                                <label class="form-check-label">Yes</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="surrendered_indian_passport" value="no">
+                                <label class="form-check-label">No</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Have you ever applied for renunciation of Indian citizenship?</label><br>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="renounced_indian_citizenship" value="yes">
+                                <label class="form-check-label">Yes</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="renounced_indian_citizenship" value="no">
+                                <label class="form-check-label">No</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Have you ever returned to India on Emergency Certificate?</label><br>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="returned_on_ec" value="yes">
+                                <label class="form-check-label">Yes</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="returned_on_ec" value="no">
+                                <label class="form-check-label">No</label>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white text-center py-3 mt-5">
+        <p>Passport Application System &copy; 2024. All Rights Reserved.</p>
+        <p><a href="https://www.passportindia.gov.in/AppOnlineProject/online/callCenter" class="text-white">Contact Us</a> | <a href="https://www.passportindia.gov.in/AppOnlineProject/online/callCenter" class="text-white">About Us</a></p>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

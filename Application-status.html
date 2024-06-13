@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passport Application History</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+    <!-- Header Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">
+            <img src="./assets/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+            Passport Application System
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="./User-home-page.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./New-applcaiton-webpage.html">New Passport</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./passport-renewal.html">Renew Passport</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./Application-status.html">Check Status</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./complaint-and-feedback-page.html">Feedback</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./Log-in-page.html">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1>Passport Application History</h1>
+                <p>Welcome, [User Name]</p>
+            </div>
+        </div>
+
+        <!-- Table Container -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <table class="table table-bordered table-hover">
+                    <thead class="thead-light">
+                        <tr>
+                            <th>Application ID</th>
+                            <th>Application Date</th>
+                            <th>Passport Type</th>
+                            <th>Status</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>123456</td>
+                            <td>2024-06-01</td>
+                            <td>Standard Passport</td>
+                            <td class="application-status text-success">Approved</td>
+                            <td><a href="#">View Details</a></td>
+                        </tr>
+                        <tr>
+                            <td>654321</td>
+                            <td>2024-05-20</td>
+                            <td>Official Passport</td>
+                            <td class="application-status text-warning">Pending</td>
+                            <td><a href="#">View Details</a></td>
+                        </tr>
+                        <tr>
+                            <td>987654</td>
+                            <td>2024-05-15</td>
+                            <td>Standard Passport</td>
+                            <td class="application-status text-danger">Rejected</td>
+                            <td><a href="#">View Details</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Track New Application Link -->
+        <div class="row mt-4">
+            <div class="col-12 text-center">
+                <p><a href="#">Track a New Application</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white text-center py-3 mt-5">
+        <p>Passport Application System &copy; 2024. All Rights Reserved.</p>
+        <p><a href="contact.html" class="text-white">Contact Us</a> | <a href="about.html" class="text-white">About Us</a></p>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
